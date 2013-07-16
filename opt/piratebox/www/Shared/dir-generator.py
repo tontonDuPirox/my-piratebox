@@ -5,7 +5,8 @@
 import os
 import os.path
 
-movie_types = [ 'mkv', 'mpg','mpeg','avi','asf','mp3','wav','mp4','wma','aif','aiff','ram', 'midi','mid','asf','au','flac' ]
+movie_types = [ 'mkv', 'mpg','mpeg','avi','wmv' ]
+sound_types = [ 'mp3','wav','mp4','wma','aif','aiff','ram', 'midi','mid','asf','au','flac' ]
 image_types = [ 'jpg','jpeg','gif','png','tif','tiff','bmp','ico' ]
 archive_types = [ 'zip','cab','7z','gz','tar.bz2','tar.gz','tar','rar', ]
 document_types = [ 'txt','text','doc','docx','abw','odt','pdf','rtf','tex','texinfo' ]
@@ -28,13 +29,16 @@ def get_template(name, file):
 def file_size(file):
     real_path = os.path.realpath(file)
     size = os.path.getsize(real_path)
+
     fileSize = str(size) + " o"
-    if (size > 1024):
-        fileSize = str(round(size / 1024, 2)) + " Ko"
-    if (size > 1024 * 1024.0):
-        fileSize = str(round(size / (1024.0 * 1024.0), 2)) + " Mo"
-    if (size > 1024 * 1024 * 1024):
+    if (size > 1024 * 1024 * 1024 * 1024):
+        fileSize = str(round(size / (1024.0 * 1024.0 * 1024.0 * 1024.0), 2)) + " To"
+    elif (size > 1024 * 1024 * 1024):
         fileSize = str(round(size / (1024.0 * 1024.0 * 1024.0), 2)) + " Go"
+    elif (size > 1024 * 1024.0):
+        fileSize = str(round(size / (1024.0 * 1024.0), 2)) + " Mo"
+    elif (size > 1024):
+        fileSize = str(round(size / 1024, 2)) + " Ko"
 
     return fileSize
 
@@ -44,6 +48,8 @@ def file_type(file):
     extension = os.path.splitext(file)[1][1:]
     if extension in movie_types:
         type = "Vid&eacute;o"
+    elif extension in sound_types:
+        type = "Audio"
     elif extension in image_types:
         type = "Image"
     elif extension in archive_types:
