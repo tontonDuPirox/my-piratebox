@@ -5,37 +5,73 @@
 import os
 import os.path
 
+movie_types = [ 'mkv', 'mpg','mpeg','avi','asf','mp3','wav','mp4','wma','aif','aiff','ram', 'midi','mid','asf','au','flac' ]
+image_types = [ 'jpg','jpeg','gif','png','tif','tiff','bmp','ico' ]
+archive_types = [ 'zip','cab','7z','gz','tar.bz2','tar.gz','tar','rar', ]
+document_types = [ 'txt','text','doc','docx','abw','odt','pdf','rtf','tex','texinfo' ]
+font_types = [ 'ttf','otf','abf','afm','bdf','bmf','fnt','fon','mgf','pcf','ttc','tfm','snf','sfd' ]
+sub_types = [ 'srt' ]
+
 def get_template(name, file):
     printLine = False
     ofi = open(os.path.realpath(file), 'r')
     for line in ofi:
+        if line == "<!-- ÷÷ " + name + " end ++ -->\n":
+            printLine = False
+
         if printLine == True:
             print line
 
         if line == "<!-- ÷÷ " + name + " start ++ -->\n":
             printLine = True
-        if line == "<!-- ÷÷ " + name + " end ++ -->\n":
-            printLine = False
+
+def file_size(file):
+    real_path = os.path.realpath(file)
+    size = os.path.getsize(real_path)
+    fileSize = str(size) + " o"
+    if (size > 1024):
+        fileSize = str(round(size / 1024, 2)) + " Ko"
+    if (size > 1024 * 1024.0):
+        fileSize = str(round(size / (1024.0 * 1024.0), 2)) + " Mo"
+    if (size > 1024 * 1024 * 1024):
+        fileSize = str(round(size / (1024.0 * 1024.0 * 1024.0), 2)) + " Go"
+
+    return fileSize
+
+def file_type(file):
+    type = " - "
+
+    extension = os.path.splitext(file)[1][1:]
+    if extension in movie_types:
+        type = "Vid&eacute;o"
+    elif extension in image_types:
+        type = "Image"
+    elif extension in archive_types:
+        type = "Archive"
+    elif extension in document_types:
+        type = "Document"
+    elif extension in font_types:
+        type = "Police"
+    elif extension in sub_types:
+        type = "Sous titres"
+
+    return type
 
 get_template('header', 'shared.html')
 
-print '<table class="table"><thead><tr><th>Nom du fichier</th><th>Taille</th></tr></thead><tbody>'
+files = os.listdir('.')
+# Will work when dir-generator and template file will be moved
+if len(files) == 0:
+    print '<p>Aucun fichier pour le moment.</p>'
+else:
+    print '<table class="table"><thead><tr><th>Nom du fichier</th><th>Type</th><th>Taille</th></tr></thead><tbody>'
 
-for name in os.listdir('.'):
-    if name != "dir-generator.py" and name != "shared.html":
-        real_path = os.path.realpath(name)
-        if os.path.isfile(real_path):
-            size = os.path.getsize(real_path)
-            fileSize = str(size) + "o"
-            if (size > 1024):
-                fileSize = str(round(size / 1024, 2)) + " Ko"
-            if (size > 1024 * 1024.0):
-                fileSize = str(round(size / (1024.0 * 1024.0), 2)) + " Mo"
-            if (size > 1024 * 1024 * 1024):
-                fileSize = str(round(size / (1024.0 * 1024.0 * 1024.0), 2)) + " Go"
+    for file in files:
+        if file != "dir-generator.py" and file != "shared.html":
+            real_path = os.path.realpath(file)
+            if os.path.isfile(real_path):
+                print '<tr><td><a href="/Shared/' + file + '">' + file + '</a></td><td>' + file_type(file) + '</td><td>' + file_size(file) + '</td></tr>'
 
-            print '<tr><td><a href="/Shared/' + name + '">' + name + '</a></td><td>' + fileSize + '</td></tr>'
-
-print '</tbody></table>'
+    print '</tbody></table>'
 
 get_template('footer', 'shared.html')
