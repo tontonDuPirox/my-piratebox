@@ -45,7 +45,7 @@ Installation
 
     wget https://github.com/tontonDuPirox/my-piratebox/archive/master.zip && unzip master.zip
 
-3) Se connecter à la piratebox
+3) Se connecter au réseau wifi de la piratebox
 
 4) Copier les fichiers vers la piratebox
 
@@ -58,5 +58,4 @@ Installation
 6) Redémarrer le service piratebox
 
     /etc/init.d/piratebox stop
-
     /etc/init.d/piratebox start
