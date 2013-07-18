@@ -7,6 +7,7 @@
 
         <!-- Le styles -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="assets/css/application.css" rel="stylesheet">
         <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -16,13 +17,13 @@
         <![endif]-->
     </head>
 
-    <body data-spy="scroll" data-offset="50" data-twttr-rendered="true">
-
-        <div class="container">
-            <div class="navbar navbar-fixed-top">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <a class="brand" href="/index.html">Pirate Box</a>
+    <body>
+        <div class="navbar navbar-fixed-top navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button"></button>
+                    <a class="brand" href="/index.html">Pirate Box</a>
+                    <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class=""><a href="/index.html">Bienvenue</a></li>
                             <li class=""><a href="/Shared">Fichiers</a></li>
@@ -33,7 +34,8 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="span4 offset4">
                     <img src="piratebox-logo.png" alt="Pirate Box">
@@ -50,13 +52,13 @@
                     <p>Pour en savoir plus sur la PirateBox &agrave; Lille et consulter le <span style="color: rgb(204, 0, 0);"> tutoriel en fran&ccedil;ais</span> pour faire votre PirateBox, rendez-vous sur le site http://www.piratebox.c.la</p>
                 </div>
             </div>
-
-            <footer class="footer">
-                <p class="pull-right"><a href="#">Haut de la page</a></p>
-                <p>Customisation avec Twitter Bootstrap : <span class="label label-warning">En cours</span></p>
-                <p>Ic&ocirc;nes par <a href="http://glyphicons.com">Glyphicons Free</a>, sous license <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-            </footer>
         </div>
+
+        <footer class="footer">
+            <p class="pull-right"><a href="#">Haut de la page</a></p>
+            <p>Customisation avec Twitter Bootstrap : <span class="label label-warning">En cours</span></p>
+            <p>Ic&ocirc;nes par <a href="http://glyphicons.com">Glyphicons Free</a>, sous license <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        </footer>
 
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
