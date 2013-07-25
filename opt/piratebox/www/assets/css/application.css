@@ -1,44 +1,42 @@
 body {
-    position: relative;
-    padding-top: 50px;
     background-color: #fff;
 }
 
 .navbar-fixed-top .brand {
-    padding-right: 0;
-    padding-left: 0;
-    margin-left: 20px;
-    float: right;
     font-weight: bold;
-    color: #000;
+    color: #fff;
     text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     transition: all .2s linear;
-}
-.navbar-fixed-top .brand:hover {
-    text-decoration: none;
+    text-shadow: 15px;
 }
 
-.presentation dl {
-    margin-top: 50px;
+a {
+    color: #800000;
 }
 
 .main_row {
-    margin-bottom: 60px;
-    margin-top: 60px;
+    background-color: #EEEEEE;
+    border-radius: 6px 6px 6px 6px;
+    font-size: 18px;
 }
 
-.bs-icon {
-    float: left;
-        margin: 7px 10px 0 0;
-	    }
+.row h3 {
+    margin-left: 20px;
+}
+
+.row h2 i, .row h3 i {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
 .footer {
-    margin-top: 15px;
+    margin: 15px 0;
     padding: 10px 0 10px;
     border-top: 1px solid #e5e5e5;
 }
+
 .footer p {
-    margin-bottom: 0;
-    color: #555;
+    margin: 0 30px;
 }

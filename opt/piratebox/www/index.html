@@ -7,40 +7,55 @@
 
         <!-- Le styles -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+              padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+        </style>
         <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="assets/css/application.css" rel="stylesheet">
-        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        
 
-        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-        <script src="assets/js/html5shiv.js"></script>
+          <script src="assets/js/html5shiv.js"></script>
         <![endif]-->
+
+        <!-- Fav icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
     </head>
 
     <body>
-        <div class="navbar navbar-fixed-top navbar-inverse">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button"></button>
-                    <a class="brand" href="/index.html">Pirate Box</a>
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="brand" href="/index.html">PIRATE <span style="color: #800000;">BOX</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="/index.html">Bienvenue</a></li>
                             <li class=""><a href="/Shared">Fichiers</a></li>
                             <li class=""><a href="/forum.html">Forum</a></li>
                             <li class=""><a href="/chat.html">Chat</a></li>
                             <li class=""><a href="/about.html">A propos</a></li>
                         </ul>
-                    </div>
+                    </div><!--/.nav-collapse -->
                 </div>
             </div>
         </div>
-        <div class="container">
+
+        <div id="content" class="container">
+
             <div class="row main_row">
-                <div class="span4">
-                    <img src="piratebox-logo.png" alt="Pirate Box">
+                <div class="span6">
+                    <img src="piratebox-logo-large.png" alt="Pirate Box">
                 </div>
-                <div class="span8 presentation">
+                <div class="span6 toto">
                     <dl class="dl-horizontal">
                         <dt>projet</dt>
                         <dd>en apprendre plus sur <a href="/about.html">PirateBox</a>,</dd>
@@ -53,18 +68,21 @@
                     </dl>
                 </div>
             </div>
-        </div>
+
+        </div> <!-- /container -->
 
         <footer class="footer">
             <p class="pull-right"><a href="#">Haut de la page</a></p>
-            <p>Customisation avec Twitter Bootstrap : <span class="label label-warning">En cours</span></p>
-            <p>Ic&ocirc;nes par <a href="http://glyphicons.com">Glyphicons Free</a>, sous license <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+            <p class="visible-desktop">Customisation avec Twitter Bootstrap : <span class="label label-warning">En cours</span></p>
+            <p class="visible-desktop">Ic&ocirc;nes par <a href="http://glyphicons.com">Glyphicons Free</a>, sous license <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         </footer>
 
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/application.js"></script>
 
     </body>
 </html>
-

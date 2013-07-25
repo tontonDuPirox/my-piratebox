@@ -66,8 +66,8 @@ def file_type(file):
 get_template('header', 'shared.html')
 
 files = os.listdir('.')
-# Will work when dir-generator and template file will be moved
-if len(files) == 0:
+
+if len(files) == 2:
     print '<p>Aucun fichier pour le moment.</p>'
 else:
     print '<table class="table"><thead><tr><th>Nom du fichier</th><th>Type</th><th>Taille</th></tr></thead><tbody>'
