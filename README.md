@@ -1,37 +1,6 @@
 My-piratebox
 ============
 
-Fork de rlespinasse/my-piratebox
-
-Distribué sans aucune garantie.
-
-Screenshots
-===========
-
-Homepage
---------
-
-![ScreenShot](https://raw.github.com/tontonDuPirox/my-piratebox/master/screens/screen-home.png)
-
-Fichiers
---------
-
-![ScreenShot](https://raw.github.com/tontonDuPirox/my-piratebox/master/screens/screen-shared.png)
-
-Forum
------
-
-![ScreenShot](https://raw.github.com/tontonDuPirox/my-piratebox/master/screens/screen-forum.png)
-
-Chat
-----
-
-![ScreenShot](https://raw.github.com/tontonDuPirox/my-piratebox/master/screens/screen-chat.png)
-
-A propos
---------
-
-![ScreenShot](https://raw.github.com/tontonDuPirox/my-piratebox/master/screens/screen-about.png)
 
 Installation
 ============
@@ -43,7 +12,7 @@ Installation
 
 2) Télécharger l'archive et la décompresser
 
-    wget https://github.com/tontonDuPirox/my-piratebox/archive/master.zip && unzip master.zip
+    wget https://github.com/corent1/my-piratebox/archive/master.zip && unzip master.zip
 
 3) Se connecter au réseau wifi de la piratebox
 
@@ -57,5 +26,12 @@ Installation
 
 6) Redémarrer le service piratebox
 
+    /etc/init.d/piratebox stop
+    /etc/init.d/piratebox start
+    
+total
+    wget https://github.com/corent1/my-piratebox/archive/master.zip && unzip master.zip
+    scp -r ./my-piratebox-master/opt/piratebox/* root@192.168.1.1:/opt/piratebox/
+    ssh root@192.168.1.1
     /etc/init.d/piratebox stop
     /etc/init.d/piratebox start
