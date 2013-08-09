@@ -29,9 +29,4 @@ Installation
     /etc/init.d/piratebox stop
     /etc/init.d/piratebox start
     
-total
-    wget https://github.com/corent1/my-piratebox/archive/master.zip && unzip master.zip
-    scp -r ./my-piratebox-master/opt/piratebox/* root@192.168.1.1:/opt/piratebox/
-    ssh root@192.168.1.1
-    /etc/init.d/piratebox stop
-    /etc/init.d/piratebox start
+
